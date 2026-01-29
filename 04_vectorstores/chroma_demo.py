@@ -73,7 +73,7 @@ def demo_create_vectorstore():
         return None
     
     # 创建嵌入模型
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="BAAI/bge-large-zh-v1.5")
     
     print("\n📄 待存储的文档:")
     for i, doc in enumerate(SAMPLE_DOCUMENTS):
@@ -170,7 +170,7 @@ def demo_persist_vectorstore():
     print(f"\n📁 持久化目录: {persist_dir}")
     
     # 创建嵌入模型
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="BAAI/bge-large-zh-v1.5")
     
     # 创建持久化向量数据库
     vectordb = Chroma.from_documents(
@@ -272,7 +272,7 @@ def demo_with_pdf():
     print(f"   分割后块数: {len(chunks)}")
     
     # 创建向量数据库
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="BAAI/bge-large-zh-v1.5")
     vectordb = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,

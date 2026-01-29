@@ -73,7 +73,7 @@ def create_vectorstore():
     if not check_api_key():
         return None
     
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="BAAI/bge-large-zh-v1.5")
     vectordb = Chroma.from_documents(
         documents=DOCUMENTS,
         embedding=embeddings,

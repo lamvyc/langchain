@@ -116,7 +116,7 @@ def check_api_key():
 
 def create_vectorstore():
     """创建向量数据库"""
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="BAAI/bge-large-zh-v1.5")
     vectordb = Chroma.from_documents(
         documents=KNOWLEDGE_BASE,
         embedding=embeddings,

@@ -34,9 +34,13 @@ def create_embeddings():
         return None
     
     # 创建 Embeddings 实例
+    # 注意：如果使用 SiliconFlow 等第三方服务，需要使用其支持的模型
     embeddings = OpenAIEmbeddings(
-        model="text-embedding-ada-002",  # OpenAI 推荐的嵌入模型
-        # 或使用最新的 text-embedding-3-small / text-embedding-3-large
+        model="BAAI/bge-large-zh-v1.5",  # SiliconFlow 支持的中文嵌入模型
+        # 其他可选模型：
+        # "BAAI/bge-large-en-v1.5" - 英文模型
+        # "BAAI/bge-m3" - 多语言模型
+        # "Qwen/Qwen3-Embedding-8B" - 通义千问最新模型
     )
     
     return embeddings
