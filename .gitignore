@@ -1,0 +1,54 @@
+# ============================================
+# LangChain + RAG 项目 Git 忽略配置
+# ============================================
+
+# 环境变量（包含 API Key，禁止提交）
+.env
+.env.local
+.env.*.local
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv/
+
+# Chroma 向量数据库（本地生成）
+chroma_db/
+*.sqlite3
+
+# IDE 配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 打包文件
+dist/
+build/
+*.egg-info/
+*.egg
+
+# 测试与覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 日志
+*.log
+logs/
