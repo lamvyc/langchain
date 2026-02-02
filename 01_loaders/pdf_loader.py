@@ -15,7 +15,7 @@ PDF 文档加载器示例
 import os
 from pathlib import Path
 
-# 加载环境变量
+# 加载环境变量,读取本地 .env 文件中的配置
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -60,7 +60,7 @@ def analyze_document(pages: list) -> dict:
         return {"error": "文档为空"}
     
     # 统计信息
-    total_chars = sum(len(page.page_content) for page in pages)
+    total_chars = sum(len(page.page_content) for page in pages) # 小鸡
     
     return {
         "总页数": len(pages),
@@ -79,8 +79,14 @@ def demo_pdf_loader():
     print("=" * 60)
     
     # 查找 data 目录下的 PDF 文件
+    """
+    __file__指向当前文件的路径
+    .parent访问当前文件的父目录
+    / "data" 构造一个路径，指向当前文件父目录下的"data"目录 
+    """
     data_dir = Path(__file__).parent.parent / "data"
     pdf_files = list(data_dir.glob("*.pdf"))
+    # print(pdf_files, 'pdf_files')
     
     if not pdf_files:
         print("\n⚠️  data/ 目录下没有找到 PDF 文件")
