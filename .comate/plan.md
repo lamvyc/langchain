@@ -129,7 +129,7 @@
 ## 项目最终结构
 
 ```
-langchain/
+langchain-basic/
 ├── README.md                         # 项目说明文档
 ├── requirements.txt                  # Python 依赖列表
 ├── .env.example                      # 环境变量模板

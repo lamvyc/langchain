@@ -23,7 +23,7 @@
 ## 📁 项目结构
 
 ```
-langchain/
+langchain-basic/
 ├── README.md                         # 项目说明文档
 ├── requirements.txt                  # Python 依赖列表
 ├── .env.example                      # 环境变量模板
@@ -59,7 +59,7 @@ langchain/
 
 ```bash
 # 克隆项目
-cd langchain
+cd langchain-basic
 
 # 创建虚拟环境（推荐）
 python -m venv venv
